@@ -1,45 +1,47 @@
-# Android-PWA-Wrapper
+# Android Messages PWA
 
-An Android Wrapper application to create native Android Apps from an offline-capable Progressive Web App.
+An Android Wrapper application to create a somewhat native-feeling version of Google Messages for Web. Best used on tablets. 
+Disclaimer: This application is unofficial and in no way is associated with Google. 
 
-Drafted for the [Android App](https://play.google.com/store/apps/details?id=at.xtools.leasingrechner&utm_source=github.com&utm_medium=link&utm_campaign=store_visit) of my [Leasing Calculator](https://www.leasingrechnen.at) Web App using [React](https://github.com/facebook/react), [Redux](https://github.com/reactjs/redux), [Materialize.css](https://github.com/Dogfalo/materialize) and a lot of Offline-First love over at [leasingrechnen.at](https://www.leasingrechnen.at).
+Version 1.0 <br>
+![messagespwascreenshotV1final2](https://user-images.githubusercontent.com/10383240/122481917-74f86280-cf84-11eb-9b9e-870562caaab2.png)
 
-## Looking for iOS or Desktop?
-Check out my other projects:
-- [iOS-PWA-Wrapper](https://github.com/xtools-at/iOS-PWA-Wrapper) for iOS
-- [Electron-PWA-Wrapper](https://github.com/xtools-at/Electron-PWA-Wrapper) for macOS, Windows and Linux
+## Why a Progressive Web App?
+Despite my slight distaste for RAM-intensive web apps being used as native app replacements, this project was the easiest, laziest way for me to be able to text on my phone from my tablet without having the chrome navbar in my way and slowing my tablet to a crawl as 20 tabs load up on startup. More manga reading, less picking up my phone. 
 
-## Why would I use a wrapper?
-I know, using a Wrapper-App to display a Website can feel a bit odd. But there are a few good reasons why you'd package your Web App like this.
-- If you've got a very sophisticated UI already, it might make sense not to rebuild it from scratch for multiple platforms, especally if it's a Single Page Application already, that doesn't "feel" like a Website.
-- There might be as well less competition for a given niche on App Stores, in comparison to Google directly. With [leasingrechnen.at](https://www.leasingrechnen.at), I've got easily into the Top 10 Apps on Google Play for my country, whereas Google Search put me on page 9 as the Site is relatively new.
 
-## What it does
-- Sets up a WebView just the way PWAs/SPAs like it (e.g. enables App cache and DOM storage, ...).
-- Shows a loading spinner while fetching the Web App.
-- Provided your Web App is Offline-capable, it only needs an Internet connection on the first startup. If this fails, it shows a native refresh widget.
-- Opens all external URLs in the device's Browser instead.
-- Checks for Internet connection and fetches Updates for your Web App accordingly.
-- Is compatible down to JellyBean, although it's recommended to build for SDK Version >= 19 (KitKat). Building for SDK Version >= 21 (Lollipop) puts you on the safe side without having to worry too much about Browser support.
-- APK-size < 1.4 MB. The latest cat video from WhatsApp weighs heavier ;)
+## The Good
+- Took less than a day to get most functionality working (aside from finishing icon/color touches)
+- No Java experience required, I just replaced package names and URLs
+- I added camera permissions to the app manifest for some reason. I was tired okay… didn’t realize that you scan the qr code with the phone like a dum dum
+- The app (as of the first version) uses the original repo’s calculator icon so it’s an adventure to try to find it!
+- I used spellcheck to review the readme this time!
+- You’re beautiful! <3
+
+## The Bad
+- The default red theming looks kinda bad, I might fix it idk
+- It’s a web app, so don’t expect speedy api fastness (pretty sure there’s no public api anyway, plus I can’t code) 
+- This isn’t really an achievement, I just changed a few lines of code (forgot to change two of em so I was really frustrated at the compiler errors for an hour)
+- Messages for web still has no search, one of its greatest features in the standalone phone app!
+- Pretty sure gradle and target api stuff is all out of date, so good luck publishing this to the Play Store
+- Unlike with a full mobile browser, browser-style message notifications are not supported yet. 
+- No app splash screen dark mode switching 
+- I don’t think you can clear the cookies, could be wrong. 
+
 
 ## How to build your own
 - Get Android Studio 3.4+
 - Clone/fork repository
-- Put your Web App's URL in _WEBAPP_URL_ in `Constants.java`
-- Replace *app_name* in `strings.xml` with the name of your App
-- Add your own primary colors to `colors.xml` (*colorPrimary, colorPrimaryDark, colorPrimaryLight*)
-- Put your own icons in place:
-    - Add your own _ic_launcher.png_ and _ic_launcher_round.png_ in the `mipmap` folders
-    - Add your own _ic_appbar.png_ in the `drawables` folders. This is displayed in Android's _Recent Apps_ View on your app bar, so it should look nicely when placed on top of your primary color.
-    - I recommend using [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio) to get the icons ready in no time
-- Change the package name in `app/build.gradle`, *applicationId*
-- Change `AndroidManifest.xml` -> `aplication` -> `activity` -> `intent-filter` to your own URLs/schemes/patterns/etc. or remove the `intent-filter` for `android.intent.action.VIEW` altogether
-- Check `Constants.java` for more options
-- Build App in Android Studio
+- Make errors in console go away if possible
+- Build App in Android Studio (build menu, build bundle/apk, then build apk. output in project dir/app/build/outputs/apk/debug)
+- Take a break and relax :)
 
-### I don't accept Feature Requests, only Pull Requests :)
+## How to Install
+A) Enable unknown sources in the browser you downloaded the APK with, then open it with the Package Installer, or...
+B) Connect your device using ADB then use `adb install dev.foreverandaday.messagespwa`
+
+### Updates
+Don’t expect much. Might merge upstream changes, but the og repo might have been abandoned so *shrug*
 
 ## License
-[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) - if you use it, we wanna see it!
-Other licensing options are available on inquiry.
+[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
