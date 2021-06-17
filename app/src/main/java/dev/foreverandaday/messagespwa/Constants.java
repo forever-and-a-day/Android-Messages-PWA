@@ -1,10 +1,10 @@
-package at.xtools.pwawrapper;
+package dev.foreverandaday.messagespwa;
 
 public class Constants {
     public Constants(){}
     // Root page
-    public static String WEBAPP_URL = "https://www.leasingrechnen.at/";
-    public static String WEBAPP_HOST = "leasingrechnen.at"; // used for checking Intent-URLs
+    public static String WEBAPP_URL = "https://messages.google.com/web/conversations";
+    public static String WEBAPP_HOST = "messages.google.com"; // used for checking Intent-URLs
 
 	// User Agent tweaks
     public static boolean POSTFIX_USER_AGENT = true; // set to true to append USER_AGENT_POSTFIX to user agent

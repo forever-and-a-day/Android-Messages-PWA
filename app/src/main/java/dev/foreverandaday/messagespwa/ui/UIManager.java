@@ -1,4 +1,4 @@
-package at.xtools.pwawrapper.ui;
+package dev.foreverandaday.messagespwa.ui;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -14,8 +14,8 @@ import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
-import at.xtools.pwawrapper.Constants;
-import at.xtools.pwawrapper.R;
+import dev.foreverandaday.messagespwa.Constants;
+import dev.foreverandaday.messagespwa.R;
 
 public class UIManager {
     // Instance variables

@@ -1,4 +1,4 @@
-package at.xtools.pwawrapper.webview;
+package dev.foreverandaday.messagespwa.webview;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -20,9 +20,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import at.xtools.pwawrapper.Constants;
-import at.xtools.pwawrapper.R;
-import at.xtools.pwawrapper.ui.UIManager;
+import dev.foreverandaday.messagespwa.Constants;
+import dev.foreverandaday.messagespwa.R;
+import dev.foreverandaday.messagespwa.ui.UIManager;
 
 public class WebViewHelper {
     // Instance variables
